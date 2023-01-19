@@ -13,7 +13,11 @@ class Slippish():
 
     def find (self, find_item):
         '''
-            Find a value in the list
+            Find a value in the list. 
+            Use it to get the list index for the value: useful for timings and repetition. 
+
+            @param find_item
+            @return list
         '''
         found = self.dll.search_list(find_item)
 
@@ -21,7 +25,10 @@ class Slippish():
 
     def find_previous (self, find_item):
         '''
-            Find a value in the list
+            Find the related values for a value: useful for relationships
+
+            @param find_item
+            @return list
         '''
         found = self.dll.search_list_previous(find_item)
 
