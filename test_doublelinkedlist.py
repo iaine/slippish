@@ -103,5 +103,14 @@ class TestDLLTests (unittest.TestCase):
         empty = doublyLL.search_list_previous(10, relation="is", relation_value=11)
         self.assertEqual(len(empty), 0) 
 
+    def test_search_previous_with_not_next_value(self, relation="", relation_value=""):
+        doublyLL = DoublyLinkedList()
+        doublyLL.insert_at_start(8)
+        doublyLL.insert_at_end(10)
+        doublyLL.insert_at_end(12)
+        doublyLL.insert_at_end(10)
+        doublyLL.insert_at_end(11)
+        empty = doublyLL.search_list_previous(10, relation="is", relation_value=11)
+        self.assertEqual(len(empty), 1) 
 if __name__ == '__main__':
     unittest.main()
