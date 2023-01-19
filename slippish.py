@@ -23,13 +23,13 @@ class Slippish():
 
         return found
 
-    def find_previous (self, find_item):
+    def find_previous (self, find_item, relation="", relation_value=""):
         '''
             Find the related values for a value: useful for relationships
 
             @param find_item
             @return list
         '''
-        found = self.dll.search_list_previous(find_item)
+        found = self.dll.search_list_previous(find_item, relation="", relation_value="")
 
         return found

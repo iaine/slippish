@@ -79,12 +79,29 @@ class TestDLLTests (unittest.TestCase):
         self.assertEqual(len(search), 2)
         self.assertEqual(search[len(search)-1], 2)
 
-    def test_search_previous(self):
+    def test_search_previous(self, relation="", relation_value=""):
         doublyLL = DoublyLinkedList()
         doublyLL.insert_at_start(9)
         doublyLL.insert_at_end(10)
+        doublyLL.insert_at_end(11)
         search = doublyLL.search_list_previous(10)
         self.assertEqual(search[0], 9)  
+
+    def test_search_previous_with_next_value(self, relation="", relation_value=""):
+        doublyLL = DoublyLinkedList()
+        doublyLL.insert_at_start(9)
+        doublyLL.insert_at_end(10)
+        doublyLL.insert_at_end(11)
+        search = doublyLL.search_list_previous(10, relation="is", relation_value=11)
+        self.assertEqual(search[0], 9) 
+
+    def test_search_previous_with_next_value_error(self, relation="", relation_value=""):
+        doublyLL = DoublyLinkedList()
+        doublyLL.insert_at_start(8)
+        doublyLL.insert_at_end(10)
+        doublyLL.insert_at_end(12)
+        empty = doublyLL.search_list_previous(10, relation="is", relation_value=11)
+        self.assertEqual(len(empty), 0) 
 
 if __name__ == '__main__':
     unittest.main()

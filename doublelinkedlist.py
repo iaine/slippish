@@ -105,9 +105,13 @@ class DoublyLinkedList:
                 n = n.next
         return results
 
-    def search_list_previous(self, search_item):
+    def search_list_previous(self, search_item, relation="", relation_value=""):
         position = 0
         results = []
+
+        if relation_value != "" and relation == "":
+            raise DLLException("No relation called")
+
         if self.start_node is None:
             raise DLLException("List has no element")
         else:
@@ -115,7 +119,11 @@ class DoublyLinkedList:
             while n is not None:
                 position += 1
                 if n.item == search_item:
-                    results.append(n.previous.item)
+                    if relation == "is":
+                        if n.next is not None and  n.next.item == relation_value:
+                            results.append(n.previous.item)
+                    elif relation == "":
+                        results.append(n.previous.item)
                 n = n.next
         return results
 

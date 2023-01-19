@@ -39,5 +39,15 @@ class TestSlippish (unittest.TestCase):
         self.assertEqual(len(find), 1)
         self.assertEqual(find[0], 1) 
 
+    def test_find_previous_value(self):
+        #Initialize the linked list with a new node
+        slip = Slippish()
+        slip.append(1)
+        slip.append(2)
+        slip.append(10)
+        find = slip.find_previous(2, relation="is", relation_value=10)
+        self.assertEqual(len(find), 1)
+        self.assertEqual(find[0], 1) 
+
 if __name__ == '__main__':
     unittest.main()
