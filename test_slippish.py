@@ -49,5 +49,10 @@ class TestSlippish (unittest.TestCase):
         self.assertEqual(len(find), 1)
         self.assertEqual(find[0], 1) 
 
+    def test_send_osc_message (self):
+
+        slip = Slippish()
+        slip.send_osc("edge:261.25:0.5:0.25")
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,4 +1,5 @@
 from doublelinkedlist import Node, DoublyLinkedList, DLLException
+from yappyChuck import Client
 
 class Slippish():
 
@@ -33,3 +34,13 @@ class Slippish():
         found = self.dll.search_list_previous(find_item, relation="", relation_value="")
 
         return found
+
+    def send_osc (self):
+        '''
+           Send an OSC message
+
+           client.send("edge:261.25:0.5:3:0.25")
+        '''
+        client = Client()
+
+        client.send("edge:261.25:0.5:3:0.25")
