@@ -96,7 +96,6 @@ class DoublyLinkedList:
         results = []
         if self.start_node is None:
             raise DLLException("List has no element")
-            #return
         else:
             n = self.start_node
             while n is not None:
@@ -106,10 +105,23 @@ class DoublyLinkedList:
                 n = n.next
         return results
 
+    def search_list_previous(self, search_item):
+        position = 0
+        results = []
+        if self.start_node is None:
+            raise DLLException("List has no element")
+        else:
+            n = self.start_node
+            while n is not None:
+                position += 1
+                if n.item == search_item:
+                    results.append(n.previous)
+                n = n.next
+        return results
+
     def reverse_linked_list(self):
         if self.start_node is None:
-            raise DLLException("The list has no element to delete")
-            #return 
+            raise DLLException("Empty lists cannot be reversed")
         p = self.start_node
         q = p.next
         p.next = None
@@ -136,15 +148,3 @@ class DoublyLinkedList:
 
 class DLLException(Exception):
     pass
-
-
-#new_linked_list = DoublyLinkedList()
-#new_linked_list.insert_in_emptylist(50)
-#new_linked_list.insert_at_start(1)
-#new_linked_list.insert_at_end(10)
-#new_linked_list.insert_at_end(12)
-#new_linked_list.delete_at_end()
-#new_linked_list.delete_at_start()
-#new_linked_list.traverse_list()
-#new_linked_list.reverse_linked_list()
-#new_linked_list.traverse_list()
