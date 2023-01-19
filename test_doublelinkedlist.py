@@ -41,6 +41,13 @@ class TestDLLTests (unittest.TestCase):
         items = [node.item for node in doublyLL]
         self.assertEqual(items[0], 4)
 
+    def test_insert_at_end_empty(self):
+        doublyLL = DoublyLinkedList()
+        doublyLL.insert_at_end(4)
+        self.assertEqual(doublyLL.header, 1)
+        items = [node.item for node in doublyLL]
+        self.assertEqual(items[0], 4)
+
     def test_insert_at_end_with_list_one_item(self):
         doublyLL = DoublyLinkedList()
         doublyLL.insert_at_end(4)

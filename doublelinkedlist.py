@@ -43,9 +43,7 @@ class DoublyLinkedList:
 
     def insert_at_end(self, data):
         if self.start_node is None:
-            new_node = Node(data)
-            self.start_node = new_node
-            self.header = 1
+            self.insert_in_emptylist(data)
             return
         n = self.start_node
         while n.next is not None:
