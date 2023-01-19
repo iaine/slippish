@@ -1,7 +1,7 @@
 import unittest
 from doublelinkedlist import Node, DoublyLinkedList, DLLException
 
-class TestCircularDLLTests (unittest.TestCase):
+class TestDLLTests (unittest.TestCase):
 
     def test_create(self):
         #Initialize the linked list with a new node
