@@ -115,7 +115,7 @@ class DoublyLinkedList:
             while n is not None:
                 position += 1
                 if n.item == search_item:
-                    results.append(n.previous)
+                    results.append(n.previous.item)
                 n = n.next
         return results
 
